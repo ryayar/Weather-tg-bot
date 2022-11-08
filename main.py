@@ -15,12 +15,6 @@ async def start_command(message: types.Message):  # функция для сам
     await message.reply("Привет! Напиши мне название города и я пришлю тебе сводку погоды.")  # вывод текста на команду
 
 
-@dp.message_handler(commands=["python"])  # обработчик команды /python
-async def python_command(message: types.Message):  # функция для самой команды
-    await bot.send_message(message.from_user.id, "Подождите, проверяю последнее видео...")  # отправляем пользователю обычное сообщение с просьбой не жать на кнопку 100500 раз
-    await bot.send_message(message.from_user.id, Get_end_video())  # отправляем пользователю обычное сообщение с последним видео на канале
-
-
 @dp.message_handler()  # обработчик всех входящих сообщений, сейчас настроены на погоду
 async def get_weather(message: types.Message):
     code_to_smile = {
